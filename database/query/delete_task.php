@@ -1,6 +1,6 @@
 <?php
 
-include("db.php");
+include("../db_connect.php");
 
 if(isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -10,9 +10,8 @@ if(isset($_GET['id'])) {
     die("Query Failed.");
   }
 
-  $_SESSION['message'] = 'Task Removed Successfully';
+  $_SESSION['message'] = "Task Removed Successfully: '$query'";
   $_SESSION['message_type'] = 'danger';
-  header('Location: index.php');
+  header('Location: ../../index.php');
 }
-
 ?>
